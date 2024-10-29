@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warning Alert</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        #warning {
+            color: red;
+            font-size: 24px;
+            display: none;
+        }
+        #popup {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+        #loading {
+            display: none;
+            margin-top: 20px;
+        }
+        #link {
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="link" onclick="showMessages()">Click here to start</div>
+    <div id="warning">WARNING ALERT!!!</div>
+    <div id="popup">Your data is getting copied!!!......</div>
+    <div id="loading">🔄 Loading...</div>
+
+    <script>
+        function showMessages() {
+            // Show warning message
+            document.getElementById('warning').style.display = 'block';
+
+            // Show loading symbol
+            document.getElementById('loading').style.display = 'inline';
+
+            // Show pop-up after a short delay
+            setTimeout(function() {
+                document.getElementById('popup').style.display = 'block';
+                document.getElementById('loading').style.display = 'none';
+            }, 2000); // 2 seconds delay
+        }
+    </script>
+
+</body>
+</html>
